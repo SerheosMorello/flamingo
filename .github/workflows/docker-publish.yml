@@ -13,7 +13,7 @@ env:
 
 jobs:
   test:
-    runs-on: MacBook-Air-Serheos
+    runs-on: [self-hosted, MacBook-Air-Serheos]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
