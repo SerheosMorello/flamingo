@@ -26,7 +26,8 @@ jobs:
           docker run --rm \
             -e VAR_NAME="${{ secrets.VAR_NAME }}" \
             app-tests:${{ github.sha }}
-
+        with:
+          file: Dockerfile
   build-and-push:
     needs: test
     runs-on: ubuntu-latest
