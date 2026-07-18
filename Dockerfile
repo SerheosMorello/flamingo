@@ -9,6 +9,5 @@ COPY pom.xml .
 RUN mvn dependency:resolve -B
 
 COPY src ./src
-COPY .env ./.env
 
 CMD ["mvn", "test", "-B"]
