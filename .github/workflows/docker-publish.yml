@@ -18,8 +18,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Build test image
+        run: docker build -t app-tests:${{ github.sha }} .
+
       - name: Run tests
-        run: make test
+        # Переменные окружения передаются напрямую в контейнер,
+        # без COPY .env в образ. Добавь сюда свои переменные из
+        # GitHub Secrets: -e VAR_NAME=${{ secrets.VAR_NAME }}
+        run: |
+          docker run --rm \
+            -e VAR_NAME="${{ secrets.VAR_NAME }}" \
+            app-tests:${{ github.sha }}
 
   build-and-push:
     needs: test
