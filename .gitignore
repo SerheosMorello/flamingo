@@ -41,3 +41,4 @@ build/
 ### Projects ###
 allure-results
 allure-report
+.idea/
