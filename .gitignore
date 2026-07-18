@@ -41,4 +41,7 @@ build/
 ### Projects ###
 allure-results
 allure-report
-.idea/
+.idea/*
+# Project exclude paths
+/actions-runner/externals/node20/lib/node_modules/
+/actions-runner/externals/node24/lib/node_modules/
