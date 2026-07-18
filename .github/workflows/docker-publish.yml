@@ -22,9 +22,6 @@ jobs:
         run: docker build -t app-tests:${{ github.sha }} .
 
       - name: Run tests
-        # Переменные окружения передаются напрямую в контейнер,
-        # без COPY .env в образ. Добавь сюда свои переменные из
-        # GitHub Secrets: -e VAR_NAME=${{ secrets.VAR_NAME }}
         run: |
           docker run --rm \
             -e VAR_NAME="${{ secrets.VAR_NAME }}" \
@@ -33,7 +30,6 @@ jobs:
   build-and-push:
     needs: test
     runs-on: ubuntu-latest
-    # Публикуем только не из PR (в PR просто собираем и тестируем, без push)
     permissions:
       contents: read
       packages: write
