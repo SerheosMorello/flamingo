@@ -1,3 +1,6 @@
+add_env:
+	cp .env.template .env
+
 build:
 	docker build -t my-java-test .
 

@@ -10,9 +10,10 @@ Instructions for building the Docker container, running tests, and generating th
 
 ## Command overview (Makefile)
 
-| Command        | Description                                                    |
+| Command        | Description                                                      |
 |----------------|------------------------------------------------------------------|
-| `make build`   | Builds the `my-java-test` Docker image                            |
+| `make add_env` | create .env file from template                                   |
+| `make build`   | Builds the `my-java-test` Docker image                           |
 | `make run`     | Runs the container and executes the tests, saving Allure results |
 | `make report`  | Generates the Allure HTML report and opens it in a browser       |
 
