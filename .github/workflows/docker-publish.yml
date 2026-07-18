@@ -26,4 +26,3 @@ jobs:
           docker run --rm \
             -e VAR_NAME="${{ secrets.VAR_NAME }}" \
             app-tests:${{ github.sha }}
-
